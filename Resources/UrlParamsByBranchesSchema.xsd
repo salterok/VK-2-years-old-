@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:element name="Param">
+    <xs:complexType>
+      <xs:attribute name="Name" type="xs:string" use="required" />
+      <xs:attribute name="Template" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="Branch">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="Param"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="Params">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="DependentParams"/>
+        <xs:element ref="GlobalParams" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DependentParams">
+    <xs:complexType>
+      <xs:sequence>
+<!--        <xs:element name="App" type="Branch"/>
+        <xs:element name="Audio" type="Branch"/>
+        <xs:element name="Docs" type="Branch"/>
+        <xs:element name="Execute" type="Branch"/>-->
+				<xs:element name="Friends" type="Branch"/>
+        <xs:element name="Groups" type="Branch"/>
+        <xs:element name="Newsfeed" type="Branch"/>
+<!--        <xs:element name="Notes" type="Branch"/>
+        <xs:element name="Obsolete" type="Branch"/>-->
+        <xs:element name="Pages" type="Branch"/>
+<!--        <xs:element name="Photos" type="Branch"/>
+        <xs:element name="Places" type="Branch"/>
+        <xs:element name="Secure" type="Branch"/>-->
+        <!--<xs:element name="SMS" mtype="Branch"/>-->
+<!--        <xs:element name="Storage" type="Branch"/>
+        <xs:element name="Subscription" type="Branch"/>-->
+        <xs:element name="Users" type="Branch"/>
+<!--        <xs:element name="Video" type="Branch"/>-->
+        <xs:element name="Wall" type="Branch"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GlobalParams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Param" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Params xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="UrlParamsByBranchesSchema.xsd">
+  <DependentParams>
+  	<Friends>
+  		<Param Name="uid" Template="@uid" />
+  		<Param Name="fields" Template="@fields" />
+  		<Param Name="name_case" Template="@name_case" />
+  		<Param Name="count" Template="@count" />
+  		<Param Name="offset" Template="@offset" />
+  		<Param Name="lid" Template="@lid" />
+  		<Param Name="target_uid" Template="@target_uid" />
+  		<Param Name="source_uid" Template="@source_uid" />
+  	</Friends>
+  	<Groups>
+  		<Param Name="source_ids" Template="@source_ids" />
+  	</Groups>
+  	<Newsfeed>
+  		<Param Name="e" Template="@e"/>
+  	</Newsfeed>
+  	<Pages>
+		<Param Name="edit" Template="@edit" />
+		<Param Name="gid" Template="@gid" />
+		<Param Name="global" Template="@global" />
+		<Param Name="hid" Template="@hid" />
+		<Param Name="mid" Template="@mid" />
+		<Param Name="need_html" Template="@need_html" />
+		<Param Name="pid" Template="@pid" />
+		<Param Name="Text" Template="@text" />
+		<Param Name="title" Template="@title" />
+		<Param Name="view" Template="@view" />
+	</Pages>
+	<Users>
+		<Param Name="uid" Template="@uid" />
+		<Param Name="uids" Template="@uids" />
+		<Param Name="fields" Template="@fields" />
+		<Param Name="name_case" Template="@name_case" />
+		<Param Name="offset" Template="@offset" />
+		<Param Name="q" Template="@q" />
+	</Users>
+	<Wall>
+		<Param Name="attachments" Template="@attachments" />
+		<Param Name="count" Template="@count" />
+		<Param Name="extended" Template="@extended" />
+		<Param Name="filter" Template="@filter" />
+		<Param Name="friends_only" Template="@friends_only" />
+		<Param Name="from_group" Template="@from_group" />
+		<Param Name="hash" Template="@hash" />
+		<Param Name="message" Template="@message" />
+		<Param Name="need_likes" Template="@need_likes" />
+		<Param Name="offset" Template="@offset" />
+		<Param Name="owner_id" Template="@owner_id" />
+		<Param Name="photo" Template="@photo" />
+		<Param Name="photo_id" Template="@photo_id" />
+		<Param Name="post_id" Template="@post_id" />
+		<Param Name="posts" Template="@posts" />
+		<Param Name="preview_length" Template="@preview_length" />
+		<Param Name="server" Template="@server" />
+		<Param Name="services" Template="@services" />
+		<Param Name="signed" Template="@signed" />
+		<Param Name="sort" Template="@sort" />
+		<Param Name="wall_id" Template="@wall_id" />
+	</Wall>
+  </DependentParams>
+  <GlobalParams>
+    <Param Name="access_token" Template="@access_token" />
+  </GlobalParams>
+</Params>
