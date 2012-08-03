@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C7DE4977-09D2-41A0-AB8E-267F75690283}</ProjectGuid>
+    <ProjectGuid>{375736A7-07A1-4198-B24E-1FF61593D5A2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VK</RootNamespace>
