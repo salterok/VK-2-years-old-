@@ -40,13 +40,13 @@ namespace VK {
             /// <param name="count">указывает, какое максимальное число оповещений следует
             ///                            возвращать, но не более 100</param>
             /// <returns>Ответ сервера в XML или JSON формате.</returns>
-            private string get(Filter filters, DateTime? start_time, DateTime? end_time, System.Int32? offset, System.Int32? count) {
+            private VKResponseBase get(string filters, string start_time, string end_time, System.Int32? offset, System.Int32? count) {
                 manager.AddValueByName("@filters", filters);
                 manager.AddValueByName("@start_time", start_time);
                 manager.AddValueByName("@end_time", end_time);
                 manager.AddValueByName("@offset", offset);
                 manager.AddValueByName("@count", count);
-                return GetResponse("get");
+                return new VKResponseBase(GetResponse("get"), IsXMLResponse);
             }
             
             /// <summary>Возвращает список оповещений об ответах других пользователей на записи
@@ -62,7 +62,7 @@ namespace VK {
             /// <param name="count">указывает, какое максимальное число оповещений следует
             ///                            возвращать, но не более 100</param>
             /// <returns>Ответ сервера в XML или JSON формате.</returns>
-            public string Get(Filter? filters = null, DateTime? start_time = null, DateTime? end_time = null, int? offset = null, int? count = null) {
+            public VKResponseBase Get(Filter? filters = null, DateTime? start_time = null, DateTime? end_time = null, int? offset = null, int? count = null) {
                 return get(filters, start_time, end_time, offset, count);
             }
             #endregion
@@ -70,13 +70,13 @@ namespace VK {
             #region notification.markAsViewed
             /// <summary>Сбрасывает счетчик непросмотренных оповещений об ответах других пользователей на записи текущего пользователя.</summary>
             /// <returns>Ответ сервера в XML или JSON формате.</returns>
-            private string markAsViewed() {
-                return GetResponse("markAsViewed");
+            private VKResponseBase markAsViewed() {
+                return new VKResponseBase(GetResponse("markAsViewed"), IsXMLResponse);
             }
             
             /// <summary>Сбрасывает счетчик непросмотренных оповещений об ответах других пользователей на записи текущего пользователя.</summary>
             /// <returns>Ответ сервера в XML или JSON формате.</returns>
-            public string MarkAsViewed() {
+            public VKResponseBase MarkAsViewed() {
                 return markAsViewed();
             }
             #endregion

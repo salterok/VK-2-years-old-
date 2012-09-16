@@ -51,15 +51,17 @@
     </Compile>
     <Compile Include="Authorization\AuthorizationDetails.cs" />
     <Compile Include="Enumerations\Access.cs" />
-    <Compile Include="Enumerations\AttachmentType.cs" />
-    <Compile Include="Enumerations\Enums.cs" />
+    <Compile Include="VKTypes\AttachmentType.cs" />
     <Compile Include="ExId.cs" />
     <Compile Include="Extension.cs" />
-    <Compile Include="Filter.cs" />
+    <Compile Include="VKTypes\GroupsFilter.cs" />
+    <Compile Include="VKTypes\NameCase.cs" />
+    <Compile Include="VKTypes\SortOrder.cs" />
+    <Compile Include="VKTypes\WallFilter.cs" />
     <Compile Include="Id.cs" />
     <Compile Include="IdList.cs" />
     <Compile Include="Network.cs" />
-    <Compile Include="Enumerations\ProfileFields.cs" />
+    <Compile Include="VKTypes\ProfileFields.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -74,6 +76,7 @@
     <Compile Include="UrlParamsManager.cs" />
     <Compile Include="VKAPIBranch.cs" />
     <Compile Include="VKApiManager.cs" />
+    <Compile Include="VKTypes\ImportId.cs" />
     <Compile Include="VKApiManager\VKApiManager.Account.cs" />
     <Compile Include="VKApiManager\VKApiManager.App.cs" />
     <Compile Include="VKApiManager\VKApiManager.Audio.cs" />
@@ -100,6 +103,15 @@
     <Compile Include="VKApiManager\VKApiManager.Users.cs" />
     <Compile Include="VKApiManager\VKApiManager.Video.cs" />
     <Compile Include="VKApiManager\VKApiManager.Wall.cs" />
+    <Compile Include="VKTypes\AccessValue.cs" />
+    <Compile Include="VKTypes\AudioSortOrder.cs" />
+    <Compile Include="VKTypes\GroupFields.cs" />
+    <Compile Include="VKTypes\GroupSortOrder.cs" />
+    <Compile Include="VKTypes\MessageFilter.cs" />
+    <Compile Include="VKTypes\NewsFilter.cs" />
+    <Compile Include="VKTypes\NotSure.cs" />
+    <Compile Include="VKTypes\SuggestionType.cs" />
+    <Compile Include="VKTypes\VideoSortOrder.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Authorization\AuthorizationWindow.resx">
