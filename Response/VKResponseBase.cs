@@ -15,6 +15,7 @@ namespace VK
 		const string RESPONSE_NODE_NAME_ERROR_CODE = "error_code";
 		const string RESPONSE_NODE_NAME_ERROR_MSG = "error_msg";
 		const string RESPONSE_NODE_NAME_REQUEST_PARAMS = "request_params";
+		const string RESPONSE_NODE_NAME_PARAM = "param";
 		const string INTERNAL_NOT_IMPLEMENTED_ERROR = "Internal error: Not Implemented";
 
 		public bool IsError { get; protected set; }
@@ -65,7 +66,7 @@ namespace VK
 					Message = doc.Root.Element(RESPONSE_NODE_NAME_ERROR_MSG).Value,
 					RequestParams = (
 									from node
-									in doc.Root.Elements(RESPONSE_NODE_NAME_REQUEST_PARAMS).Descendants()
+									in doc.Root.Elements(RESPONSE_NODE_NAME_REQUEST_PARAMS).Elements(RESPONSE_NODE_NAME_PARAM)
 									select new KeyValuePair<string, string>(
 										node.Element("key").Value,
 										node.Element("value").Value

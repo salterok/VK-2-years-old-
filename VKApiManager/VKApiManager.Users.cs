@@ -69,7 +69,7 @@ namespace VK {
             /// <param name="uids">перечисленные через запятую ID пользователей или их короткие имена (screen_name)</param>
             /// <returns>Ответ сервера в XML или JSON формате.</returns>
             public VKResponseBase Get(params System.Int64[] uids) {
-                return get(String.Join(",", uids.Cast<System.String>().ToArray()), null, null);
+                return get(String.Join(",", uids.Select(t => t.ToString()).ToArray()), null, null);
             }
             
             /// <summary>Возвращает расширенную информацию о пользователях.</summary>
@@ -78,7 +78,7 @@ namespace VK {
             /// <param name="name_case">падеж для склонения имени и фамилии пользователя</param>
             /// <returns>Ответ сервера в XML или JSON формате.</returns>
             public VKResponseBase Get(long[] uids, ProfileFields? fields, NameCase? name_case) {
-                return get(String.Join(",", uids.Cast<System.String>().ToArray()), fields, name_case);
+				return get(String.Join(",", uids.Select(t => t.ToString()).ToArray()), fields, name_case);
             }
             #endregion
             

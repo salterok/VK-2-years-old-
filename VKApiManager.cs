@@ -10,6 +10,11 @@ namespace VK
 	{
 		private AuthorizationDetails authorizationDetails;
 
+		public AuthorizationDetails AuthorizationDetails {
+			get {
+				return authorizationDetails;
+			}
+		}
 		private bool status;
 
 		/// <summary>

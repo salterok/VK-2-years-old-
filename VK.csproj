@@ -23,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\VK.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -51,6 +52,7 @@
     </Compile>
     <Compile Include="Authorization\AuthorizationDetails.cs" />
     <Compile Include="Enumerations\Access.cs" />
+    <Compile Include="ParamConverter.cs" />
     <Compile Include="VKTypes\AttachmentType.cs" />
     <Compile Include="ExId.cs" />
     <Compile Include="Extension.cs" />

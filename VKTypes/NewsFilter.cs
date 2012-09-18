@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 
-namespace VK.VKTypes {
+namespace VK {
 	public enum NewsFilter {
 		/// <summary>
 		/// новые записи со стен

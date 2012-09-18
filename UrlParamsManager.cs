@@ -27,17 +27,11 @@ namespace VK
 		public void AddValueByName(string name, object value)
 		{
 			if (value == null)
-			{
 				return;
-			}
 			if (name.StartsWith("@"))
-			{
-				list.Add(name, value.ToString());
-			}
+				list.Add(name, ParamConverter.Convert(value));
 			else
-			{
 				throw new Exception("Passed value ID not valid");
-			}
 		}
 
 		public string GetUrlParams()
