@@ -23,7 +23,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Debug\VK.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -54,14 +55,14 @@
     <Compile Include="Enumerations\Access.cs" />
     <Compile Include="ParamConverter.cs" />
     <Compile Include="VKTypes\AttachmentType.cs" />
-    <Compile Include="ExId.cs" />
+    <Compile Include="VKTypes\ExId.cs" />
     <Compile Include="Extension.cs" />
     <Compile Include="VKTypes\GroupsFilter.cs" />
     <Compile Include="VKTypes\NameCase.cs" />
     <Compile Include="VKTypes\SortOrder.cs" />
     <Compile Include="VKTypes\WallFilter.cs" />
-    <Compile Include="Id.cs" />
-    <Compile Include="IdList.cs" />
+    <Compile Include="VKTypes\Id.cs" />
+    <Compile Include="VKTypes\IdList.cs" />
     <Compile Include="Network.cs" />
     <Compile Include="VKTypes\ProfileFields.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,7 +74,7 @@
     <Compile Include="Response\VKErrorResponse.cs" />
     <Compile Include="Response\VKResponse.cs" />
     <Compile Include="Response\VKResponseBase.cs" />
-    <Compile Include="Services.cs" />
+    <Compile Include="VKTypes\Services.cs" />
     <Compile Include="UrlParamsByBranchesManager.cs" />
     <Compile Include="UrlParamsManager.cs" />
     <Compile Include="VKAPIBranch.cs" />
@@ -133,6 +134,9 @@
     <None Include="Resources\UrlParamsByBranches.xml">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

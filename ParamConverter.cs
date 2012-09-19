@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 using System.ComponentModel;
-using System.Globalization;
 
 namespace VK {
 	internal static class ParamConverter {
@@ -15,7 +14,7 @@ namespace VK {
 		}
 
 		private static string ConvertEnum(Enum p) {
-			return p.GetDescriptionValue(",");
+			return p.GetDescriptionValue();
 		}
 	}
 }

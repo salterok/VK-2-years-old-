@@ -19,12 +19,16 @@ namespace VK
 		const string INTERNAL_NOT_IMPLEMENTED_ERROR = "Internal error: Not Implemented";
 
 		public bool IsError { get; protected set; }
-		public string ResponseSource { get; protected set; }
+		public string ResponseSource { get { return response.InnerXml; } }
 		public VKErrorResponse Error { get; protected set; }
+
+		private XmlDocument response;
 
 		public VKResponseBase(string source, bool is_xml)
 		{
-			ResponseSource = source;
+			//ResponseSource = source;
+			response = new XmlDocument();
+			response.LoadXml(source);
 			if (is_xml)
 			{
 				tryParseError_XML(source);
@@ -33,6 +37,10 @@ namespace VK
 			{
 				tryParseError_JSON(source);
 			}
+		}
+
+		public string GetData(string xpath) {
+			return response.DocumentElement.SelectSingleNode(xpath).InnerText;
 		}
 
 		private void tryParseError_JSON(string source)
