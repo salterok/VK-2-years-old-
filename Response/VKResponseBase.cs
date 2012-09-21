@@ -6,6 +6,8 @@ using System.IO;
 using System.Xml;
 //using Newtonsoft.Json;
 using System.Xml.Linq;
+using System.Collections.Specialized;
+
 
 namespace VK
 {
@@ -39,8 +41,20 @@ namespace VK
 			}
 		}
 
-		public string GetData(string xpath) {
+		public string GetSingleValue(string xpath) {
 			return response.DocumentElement.SelectSingleNode(xpath).InnerText;
+		}
+
+		public IEnumerable<NameValueCollection> GetObjectValues(string root, params string[] xpath) {
+			var nodes = response.DocumentElement.SelectNodes(root);
+			foreach (XmlNode node in nodes) {
+				var result = new NameValueCollection();
+				foreach (var path in xpath) {
+					var temp = node.SelectSingleNode(path);
+					result.Add(temp.Name, temp.InnerText);
+				}
+				yield return result;
+			}
 		}
 
 		private void tryParseError_JSON(string source)

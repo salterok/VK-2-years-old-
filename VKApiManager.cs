@@ -177,17 +177,11 @@ namespace VK
 			{
 				retValue = false;
 			}
-			if (retValue)
-			{
+			if (retValue) {
 				authorizationDetails = details;
-				AuthorizationWindow authWindow = new AuthorizationWindow(ref authorizationDetails);
-				if (authWindow.ShowDialog() == DialogResult.Yes)
-				{
-					retValue = true;
-				}
-				else
-				{
-					retValue = false;
+				if (!authorizationDetails.Valid()) {
+					AuthorizationWindow authWindow = new AuthorizationWindow(ref authorizationDetails);
+					retValue = (authWindow.ShowDialog() == DialogResult.Yes);
 				}
 			}
 			InitAPI(retValue);

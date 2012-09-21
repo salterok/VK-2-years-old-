@@ -35,7 +35,7 @@ namespace VK.Authorization
 				switch (m.Groups["name"].Value)
 				{
 					case "access_token":
-						authDetails.accessToken = m.Groups["value"].Value;
+						authDetails.SetAccessToken(m.Groups["value"].Value);
 						break;
 					case "user_id":
 						authDetails.userId = Convert.ToInt32(m.Groups["value"].Value);

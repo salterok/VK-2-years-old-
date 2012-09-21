@@ -5,6 +5,7 @@ namespace VK.Authorization
 	/// <summary>
 	/// Представляет все необходимую для авторизации и обращения к API информацию.
 	/// </summary>
+	[Serializable]
 	public class AuthorizationDetails
 	{
 		/// <summary>
@@ -38,6 +39,8 @@ namespace VK.Authorization
 		/// <remarks>После истечения времени действия необходимо повторно авторизоватся.</remarks>
 		public int expiresIn;
 
+		public DateTime issuedTime;
+
 		/// <summary>
 		/// Констуктор по умолчанию.
 		/// </summary>
@@ -49,6 +52,16 @@ namespace VK.Authorization
 			userId = -1;
 			accessToken = String.Empty;
 			expiresIn = -1;
+			issuedTime = DateTime.MinValue;
+		}
+
+		public bool Valid() {
+			return !String.IsNullOrEmpty(accessToken) && issuedTime != DateTime.Now && issuedTime.AddSeconds(expiresIn) > DateTime.Now;
+		}
+
+		public void SetAccessToken(string token) {
+			this.issuedTime = DateTime.Now;
+			this.accessToken = token;
 		}
 	}
 }
