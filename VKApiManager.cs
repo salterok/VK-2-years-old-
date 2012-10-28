@@ -4,10 +4,8 @@ using System.Reflection;
 using System.Windows.Forms;
 using VK.Authorization;
 
-namespace VK
-{
-	public partial class VKApiManager
-	{
+namespace VK {
+	public partial class VKApiManager {
 		private AuthorizationDetails authorizationDetails;
 
 		public AuthorizationDetails AuthorizationDetails {
@@ -20,128 +18,109 @@ namespace VK
 		/// <summary>
 		/// Если значение <value>true</value>, то ответ будет в формате XML иначе - JSON.
 		/// </summary>
-		public bool IsXmlResponseNeeded
-		{
+		public bool IsXmlResponseNeeded {
 			get;
 			private set;
 		}
 
-		public Users users
-		{
+		public Users users {
 			get;
 			private set;
 		}
 
-		public Friends friends
-		{
+		public Friends friends {
 			get;
 			private set;
 		}
 
-		public Photos photos
-		{
+		public Photos photos {
 			get;
 			private set;
 		}
 
-		public Wall wall
-		{
+		public Wall wall {
 			get;
 			private set;
 		}
 
-		public Newsfeed newsfeed
-		{
+		public Newsfeed newsfeed {
 			get;
 			private set;
 		}
 
-		public Audio audio
-		{
+		public Audio audio {
 			get;
 			private set;
 		}
 
-		public Video video
-		{
+		public Video video {
 			get;
 			private set;
 		}
 
-		public Docs docs
-		{
+		public Docs docs {
 			get;
 			private set;
 		}
 
-		public Notes notes
-		{
+		public Notes notes {
 			get;
 			private set;
 		}
 
-		public Pages pages
-		{
+		public Pages pages {
 			get;
 			private set;
 		}
 
-		public Places places
-		{
+		public Places places {
 			get;
 			private set;
 		}
 
-		public Secure secure
-		{
+		public Secure secure {
 			get;
 			private set;
 		}
 
-		public SMS sms
-		{
+		public SMS sms {
 			get;
 			private set;
 		}
 
-		public Subscriptions subscription
-		{
+		public Subscriptions subscription {
 			get;
 			private set;
 		}
 
-		public Storage storage
-		{
+		public Storage storage {
 			get;
 			private set;
 		}
 
-		public App app
-		{
+		public App app {
 			get;
 			private set;
 		}
 
-		public Execute execute
-		{
+		public Execute execute {
 			get;
 			private set;
 		}
 
-		public Obsolete obsolete
-		{
+		public Obsolete obsolete {
 			get;
 			private set;
 		}
 
-		public VKApiManager(AuthorizationDetails details, bool xmlNeeded = true)
-		{
+		public Messages messages { get; private set; }
+
+		public VKApiManager(AuthorizationDetails details, bool xmlNeeded = true) {
 			IsXmlResponseNeeded = xmlNeeded;
 			status = Init(details);
 		}
 
-		public VKApiManager(int appId, AccessRights rights, bool xmlNeeded = true)
-		{
+		public VKApiManager(int appId, AccessRights rights, bool xmlNeeded = true) {
 			AuthorizationDetails details = new AuthorizationDetails();
 			details.appId = appId;
 			details.rights = rights;
@@ -149,17 +128,14 @@ namespace VK
 			status = Init(details);
 		}
 
-		public VKApiManager(string appId, AccessRights rights, bool xmlNeeded = true)
-		{
+		public VKApiManager(string appId, AccessRights rights, bool xmlNeeded = true) {
 			AuthorizationDetails details = new AuthorizationDetails();
-			if (Int32.TryParse(appId, out details.appId))
-			{
+			if (Int32.TryParse(appId, out details.appId)) {
 				details.rights = rights;
 				IsXmlResponseNeeded = xmlNeeded;
 				status = Init(details);
 			}
-			else
-			{
+			else {
 				status = false;
 			}
 		}
@@ -170,19 +146,16 @@ namespace VK
 		/// <param name="details">Информация, необходимая для авторизации. Для успешной авторизации обязательны валидные поля
 		/// <paramref name="AuthorizationDetails.appId"/> и <paramref name="AuthorizationDetails.rights"/>.</param>
 		/// <returns>Возвращает <paramref name="DialogResult.Yes"/> в случае успешной авторизации, иначе - <paramref name="DialogResult.No"/>.</returns>
-		private bool Init(AuthorizationDetails details)
-		{
-			bool retValue = true;
-			if (details.appId < 0 || details.rights == AccessRights.NO_RIGHTS)
-			{
-				retValue = false;
-			}
-			if (retValue) {
+		private bool Init(AuthorizationDetails details) {
+			bool retValue = details.IsEmpty();
+			if (!retValue) {
 				authorizationDetails = details;
-				if (!authorizationDetails.Valid()) {
+				if (!authorizationDetails.IsValid()) {
 					AuthorizationWindow authWindow = new AuthorizationWindow(ref authorizationDetails);
 					retValue = (authWindow.ShowDialog() == DialogResult.Yes);
 				}
+				else
+					retValue = true;
 			}
 			InitAPI(retValue);
 			return retValue;
@@ -191,15 +164,12 @@ namespace VK
 		/// <summary>
 		/// Инициализирует все вложеные классы наследованые от <typeparamref name="VKAPIBranch"/> и предоставляющие доступ к разным группам API.
 		/// </summary>
-		private void InitAPI(bool isError)
-		{
-			if (!isError)
-			{
+		private void InitAPI(bool isError) {
+			if (!isError) {
 				VKAPIBranch.error = true;
 			}
 			var branches = this.GetType().GetProperties().Where(item => item.PropertyType.IsSubclassOf(typeof(VKAPIBranch)));
-			foreach (PropertyInfo property in branches)
-			{
+			foreach (PropertyInfo property in branches) {
 				property.SetValue(this, Activator.CreateInstance(property.PropertyType, new object[] { IsXmlResponseNeeded }), null);
 				(property.GetValue(this, null) as VKAPIBranch).Initialize(this.authorizationDetails.accessToken);
 			}

@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define NO_CHECK
+
+using System;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -98,6 +100,9 @@ namespace VK
 			{
 				XmlDocument document = new XmlDocument();
 				document.LoadXml(Resources.UrlParamsByBranches);
+#if NO_CHECK
+				/*
+#endif
 				XmlSchema schema = new System.Xml.Schema.XmlSchema();
 				bool valid = true;
 				schema = XmlSchema.Read(new MemoryStream(Encoding.UTF8.GetBytes(Resources.UrlParamsByBranchesSchema)),
@@ -109,6 +114,9 @@ namespace VK
 				document.Validate((sender, e) => valid = false);
 				if (!valid)
 					throw new XmlException("Document is not valid.");
+#if NO_CHECK
+				*/
+#endif
 				paramsManager = new UrlParamsByBranchesManager(document);
 			}
 			catch (System.Exception)

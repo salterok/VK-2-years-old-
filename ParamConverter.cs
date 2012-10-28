@@ -10,6 +10,8 @@ namespace VK {
 		public static string Convert(object obj) {
 			if (obj is Enum)
 				return ConvertEnum(obj as Enum);
+			if (obj is bool)
+				return ((bool)obj) ? "1" : "0";
 			return obj.ToString();
 		}
 

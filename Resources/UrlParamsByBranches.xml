@@ -1,66 +1,391 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Params xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="UrlParamsByBranchesSchema.xsd">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Params>
   <DependentParams>
-  	<Friends>
-  		<Param Name="uid" Template="@uid" />
-  		<Param Name="fields" Template="@fields" />
-  		<Param Name="name_case" Template="@name_case" />
-  		<Param Name="count" Template="@count" />
-  		<Param Name="offset" Template="@offset" />
-  		<Param Name="lid" Template="@lid" />
-  		<Param Name="target_uid" Template="@target_uid" />
-  		<Param Name="source_uid" Template="@source_uid" />
-  	</Friends>
-  	<Groups>
-  		<Param Name="source_ids" Template="@source_ids" />
-  	</Groups>
-  	<Newsfeed>
-  		<Param Name="e" Template="@e"/>
-  	</Newsfeed>
-  	<Pages>
-		<Param Name="edit" Template="@edit" />
-		<Param Name="gid" Template="@gid" />
-		<Param Name="global" Template="@global" />
-		<Param Name="hid" Template="@hid" />
-		<Param Name="mid" Template="@mid" />
-		<Param Name="need_html" Template="@need_html" />
-		<Param Name="pid" Template="@pid" />
-		<Param Name="Text" Template="@text" />
-		<Param Name="title" Template="@title" />
-		<Param Name="view" Template="@view" />
-	</Pages>
-	<Users>
-		<Param Name="uid" Template="@uid" />
-		<Param Name="uids" Template="@uids" />
-		<Param Name="fields" Template="@fields" />
-		<Param Name="name_case" Template="@name_case" />
-		<Param Name="offset" Template="@offset" />
-		<Param Name="q" Template="@q" />
-	</Users>
-	<Wall>
-		<Param Name="attachments" Template="@attachments" />
-		<Param Name="count" Template="@count" />
-		<Param Name="extended" Template="@extended" />
-		<Param Name="filter" Template="@filter" />
-		<Param Name="friends_only" Template="@friends_only" />
-		<Param Name="from_group" Template="@from_group" />
-		<Param Name="hash" Template="@hash" />
-		<Param Name="message" Template="@message" />
-		<Param Name="need_likes" Template="@need_likes" />
-		<Param Name="offset" Template="@offset" />
-		<Param Name="owner_id" Template="@owner_id" />
-		<Param Name="photo" Template="@photo" />
-		<Param Name="photo_id" Template="@photo_id" />
-		<Param Name="post_id" Template="@post_id" />
-		<Param Name="posts" Template="@posts" />
-		<Param Name="preview_length" Template="@preview_length" />
-		<Param Name="server" Template="@server" />
-		<Param Name="services" Template="@services" />
-		<Param Name="signed" Template="@signed" />
-		<Param Name="sort" Template="@sort" />
-		<Param Name="wall_id" Template="@wall_id" />
-	</Wall>
+    <Users>
+      <Param Name="uid" Template="@uid" />
+      <Param Name="uids" Template="@uids" />
+      <Param Name="fields" Template="@fields" />
+      <Param Name="name_case" Template="@name_case" />
+      <Param Name="q" Template="@q" />
+      <Param Name="count" Template="@count" />
+      <Param Name="offset" Template="@offset" />
+    </Users>
+    <Friends>
+      <Param Name="uid" Template="@uid" />
+      <Param Name="fields" Template="@fields" />
+      <Param Name="name_case" Template="@name_case" />
+      <Param Name="count" Template="@count" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="lid" Template="@lid" />
+      <Param Name="order" Template="@order" />
+      <Param Name="target_uid" Template="@target_uid" />
+      <Param Name="source_uid" Template="@source_uid" />
+      <Param Name="uids" Template="@uids" />
+      <Param Name="name" Template="@name" />
+      <Param Name="text" Template="@text" />
+      <Param Name="need_messages" Template="@need_messages" />
+      <Param Name="need_mutual" Template="@need_mutual" />
+      <Param Name="out" Template="@out" />
+      <Param Name="filter" Template="@filter" />
+    </Friends>
+    <Photos>
+      <Param Name="uid" Template="@uid" />
+      <Param Name="gid" Template="@gid" />
+      <Param Name="aids" Template="@aids" />
+      <Param Name="need_covers" Template="@need_covers" />
+      <Param Name="aid" Template="@aid" />
+      <Param Name="pids" Template="@pids" />
+      <Param Name="extended" Template="@extended" />
+      <Param Name="limit" Template="@limit" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="feed" Template="@feed" />
+      <Param Name="feed_type" Template="@feed_type" />
+      <Param Name="owner_id" Template="@owner_id" />
+      <Param Name="no_service_albums" Template="@no_service_albums" />
+      <Param Name="count" Template="@count" />
+      <Param Name="photos" Template="@photos" />
+      <Param Name="title" Template="@title" />
+      <Param Name="privacy" Template="@privacy" />
+      <Param Name="comment_privacy" Template="@comment_privacy" />
+      <Param Name="description" Template="@description" />
+      <Param Name="pid" Template="@pid" />
+      <Param Name="caption" Template="@caption" />
+      <Param Name="target_aid" Template="@target_aid" />
+      <Param Name="oid" Template="@oid" />
+      <Param Name="before" Template="@before" />
+      <Param Name="after" Template="@after" />
+      <Param Name="server" Template="@server" />
+      <Param Name="photos_list" Template="@photos_list" />
+      <Param Name="hash" Template="@hash" />
+      <Param Name="photo" Template="@photo" />
+      <Param Name="sort" Template="@sort" />
+      <Param Name="message" Template="@message" />
+      <Param Name="reply_to_cid" Template="@reply_to_cid" />
+      <Param Name="сid" Template="@сid" />
+      <Param Name="cid" Template="@cid" />
+      <Param Name="x" Template="@x" />
+      <Param Name="y" Template="@y" />
+      <Param Name="x2" Template="@x2" />
+      <Param Name="y2" Template="@y2" />
+      <Param Name="tag_id" Template="@tag_id" />
+    </Photos>
+    <Wall>
+      <Param Name="owner_id" Template="@owner_id" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="count" Template="@count" />
+      <Param Name="filter" Template="@filter" />
+      <Param Name="extended" Template="@extended" />
+      <Param Name="post_id" Template="@post_id" />
+      <Param Name="sort" Template="@sort" />
+      <Param Name="need_likes" Template="@need_likes" />
+      <Param Name="preview_length" Template="@preview_length" />
+      <Param Name="posts" Template="@posts" />
+      <Param Name="message" Template="@message" />
+      <Param Name="attachments" Template="@attachments" />
+      <Param Name="lat" Template="@lat" />
+      <Param Name="long" Template="@long" />
+      <Param Name="place_id" Template="@place_id" />
+      <Param Name="services" Template="@services" />
+      <Param Name="from_group" Template="@from_group" />
+      <Param Name="signed" Template="@signed" />
+      <Param Name="friends_only" Template="@friends_only" />
+      <Param Name="text" Template="@text" />
+      <Param Name="reply_to_cid" Template="@reply_to_cid" />
+      <Param Name="cid" Template="@cid" />
+      <Param Name="repost" Template="@repost" />
+    </Wall>
+    <Newsfeed>
+      <Param Name="source_ids" Template="@source_ids" />
+      <Param Name="filters" Template="@filters" />
+      <Param Name="start_time" Template="@start_time" />
+      <Param Name="end_time" Template="@end_time" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="from" Template="@from" />
+      <Param Name="count" Template="@count" />
+      <Param Name="max_photos" Template="@max_photos" />
+      <Param Name="q" Template="@q" />
+      <Param Name="start_id" Template="@start_id" />
+      <Param Name="extended" Template="@extended" />
+      <Param Name="fields" Template="@fields" />
+      <Param Name="uids" Template="@uids" />
+      <Param Name="gids" Template="@gids" />
+    </Newsfeed>
+    <Groups>
+      <Param Name="uid" Template="@uid" />
+      <Param Name="extended" Template="@extended" />
+      <Param Name="filter" Template="@filter" />
+      <Param Name="fields" Template="@fields" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="count" Template="@count" />
+      <Param Name="gids" Template="@gids" />
+      <Param Name="gid" Template="@gid" />
+      <Param Name="sort" Template="@sort" />
+      <Param Name="q" Template="@q" />
+      <Param Name="not_sure" Template="@not_sure" />
+    </Groups>
+    <Audio>
+      <Param Name="uid" Template="@uid" />
+      <Param Name="gid" Template="@gid" />
+      <Param Name="album_id" Template="@album_id" />
+      <Param Name="aids" Template="@aids" />
+      <Param Name="need_user" Template="@need_user" />
+      <Param Name="count" Template="@count" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="audios" Template="@audios" />
+      <Param Name="lyrics_id" Template="@lyrics_id" />
+      <Param Name="server" Template="@server" />
+      <Param Name="audio" Template="@audio" />
+      <Param Name="hash" Template="@hash" />
+      <Param Name="artist" Template="@artist" />
+      <Param Name="title" Template="@title" />
+      <Param Name="q" Template="@q" />
+      <Param Name="auto_complete" Template="@auto_complete" />
+      <Param Name="sort" Template="@sort" />
+      <Param Name="lyrics" Template="@lyrics" />
+      <Param Name="aid" Template="@aid" />
+      <Param Name="oid" Template="@oid" />
+      <Param Name="text" Template="@text" />
+      <Param Name="no_search" Template="@no_search" />
+      <Param Name="after" Template="@after" />
+      <Param Name="before" Template="@before" />
+    </Audio>
+    <Video>
+      <Param Name="videos" Template="@videos" />
+      <Param Name="uid" Template="@uid" />
+      <Param Name="gid" Template="@gid" />
+      <Param Name="aid" Template="@aid" />
+      <Param Name="width" Template="@width" />
+      <Param Name="count" Template="@count" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="vid" Template="@vid" />
+      <Param Name="oid" Template="@oid" />
+      <Param Name="name" Template="@name" />
+      <Param Name="desc" Template="@desc" />
+      <Param Name="privacy_view" Template="@privacy_view" />
+      <Param Name="privacy_comment" Template="@privacy_comment" />
+      <Param Name="q" Template="@q" />
+      <Param Name="sort" Template="@sort" />
+      <Param Name="hd" Template="@hd" />
+      <Param Name="owner_id" Template="@owner_id" />
+      <Param Name="message" Template="@message" />
+      <Param Name="сid" Template="@сid" />
+      <Param Name="cid" Template="@cid" />
+      <Param Name="tag_id" Template="@tag_id" />
+      <Param Name="description" Template="@description" />
+    </Video>
+    <Docs>
+      <Param Name="oid" Template="@oid" />
+      <Param Name="count" Template="@count" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="docs" Template="@docs" />
+      <Param Name="file" Template="@file" />
+    </Docs>
+    <Notes>
+      <Param Name="uid" Template="@uid" />
+      <Param Name="nids" Template="@nids" />
+      <Param Name="sort" Template="@sort" />
+      <Param Name="count" Template="@count" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="nid" Template="@nid" />
+      <Param Name="owner_id" Template="@owner_id" />
+      <Param Name="need_wiki" Template="@need_wiki" />
+      <Param Name="title" Template="@title" />
+      <Param Name="text" Template="@text" />
+      <Param Name="privacy" Template="@privacy" />
+      <Param Name="comment_privacy" Template="@comment_privacy" />
+      <Param Name="reply_to" Template="@reply_to" />
+      <Param Name="message" Template="@message" />
+      <Param Name="сid" Template="@сid" />
+    </Notes>
+    <Pages>
+      <Param Name="pid" Template="@pid" />
+      <Param Name="title" Template="@title" />
+      <Param Name="gid" Template="@gid" />
+      <Param Name="mid" Template="@mid" />
+      <Param Name="global" Template="@global" />
+      <Param Name="need_html" Template="@need_html" />
+      <Param Name="Text" Template="@Text" />
+      <Param Name="view" Template="@view" />
+      <Param Name="edit" Template="@edit" />
+      <Param Name="hid" Template="@hid" />
+    </Pages>
+    <Places>
+      <Param Name="title" Template="@title" />
+      <Param Name="latitude" Template="@latitude" />
+      <Param Name="longitude" Template="@longitude" />
+      <Param Name="type" Template="@type" />
+      <Param Name="country" Template="@country" />
+      <Param Name="city" Template="@city" />
+      <Param Name="address" Template="@address" />
+      <Param Name="places" Template="@places" />
+      <Param Name="q" Template="@q" />
+      <Param Name="radius" Template="@radius" />
+      <Param Name="place_id" Template="@place_id" />
+      <Param Name="text" Template="@text" />
+      <Param Name="services" Template="@services" />
+      <Param Name="friends_only" Template="@friends_only" />
+      <Param Name="place" Template="@place" />
+      <Param Name="uid" Template="@uid" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="count" Template="@count" />
+      <Param Name="timestamp" Template="@timestamp" />
+      <Param Name="need_places" Template="@need_places" />
+      <Param Name="need_full" Template="@need_full" />
+      <Param Name="code" Template="@code" />
+      <Param Name="cids" Template="@cids" />
+    </Places>
+    <Secure>
+      <Param Name="timestamp" Template="@timestamp" />
+      <Param Name="random" Template="@random" />
+      <Param Name="uids" Template="@uids" />
+      <Param Name="message" Template="@message" />
+      <Param Name="uid" Template="@uid" />
+      <Param Name="votes" Template="@votes" />
+      <Param Name="test_mode" Template="@test_mode" />
+      <Param Name="type" Template="@type" />
+      <Param Name="uid_from" Template="@uid_from" />
+      <Param Name="uid_to" Template="@uid_to" />
+      <Param Name="date_from" Template="@date_from" />
+      <Param Name="date_to" Template="@date_to" />
+      <Param Name="limit" Template="@limit" />
+      <Param Name="rate" Template="@rate" />
+      <Param Name="counter" Template="@counter" />
+      <Param Name="api_id" Template="@api_id" />
+      <Param Name="sig" Template="@sig" />
+      <Param Name="v" Template="@v" />
+      <Param Name="key" Template="@key" />
+      <Param Name="value" Template="@value" />
+      <Param Name="locale" Template="@locale" />
+      <Param Name="description" Template="@description" />
+      <Param Name="format" Template="@format" />
+    </Secure>
+    <SMS>
+      <Param Name="prefix" Template="@prefix" />
+    </SMS>
+    <Subscriptions>
+      <Param Name="uid" Template="@uid" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="count" Template="@count" />
+    </Subscriptions>
+    <Storage>
+      <Param Name="key" Template="@key" />
+      <Param Name="value" Template="@value" />
+      <Param Name="global" Template="@global" />
+      <Param Name="uid" Template="@uid" />
+      <Param Name="keys" Template="@keys" />
+    </Storage>
+    <App>
+      <Param Name="key" Template="@key" />
+      <Param Name="user_id" Template="@user_id" />
+      <Param Name="session" Template="@session" />
+      <Param Name="count" Template="@count" />
+      <Param Name="value" Template="@value" />
+      <Param Name="score" Template="@score" />
+      <Param Name="messages_to_get" Template="@messages_to_get" />
+      <Param Name="message" Template="@message" />
+      <Param Name="name" Template="@name" />
+    </App>
+    <Execute>
+      <Param Name="code" Template="@code" />
+    </Execute>
+    <Obsolete>
+      <Param Name="api_id" Template="@api_id" />
+      <Param Name="sig" Template="@sig" />
+      <Param Name="v" Template="@v" />
+      <Param Name="format" Template="@format" />
+      <Param Name="test_mode" Template="@test_mode" />
+      <Param Name="uid" Template="@uid" />
+      <Param Name="text" Template="@text" />
+      <Param Name="timestamp" Template="@timestamp" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="count" Template="@count" />
+      <Param Name="random" Template="@random" />
+      <Param Name="status" Template="@status" />
+    </Obsolete>
+    <Messages>
+      <Param Name="out" Template="@out" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="count" Template="@count" />
+      <Param Name="filters" Template="@filters" />
+      <Param Name="preview_length" Template="@preview_length" />
+      <Param Name="time_offset" Template="@time_offset" />
+      <Param Name="mid" Template="@mid" />
+      <Param Name="mids" Template="@mids" />
+      <Param Name="uid" Template="@uid" />
+      <Param Name="chat_id" Template="@chat_id" />
+      <Param Name="q" Template="@q" />
+      <Param Name="fields" Template="@fields" />
+      <Param Name="message" Template="@message" />
+      <Param Name="attachment" Template="@attachment" />
+      <Param Name="forward_messages" Template="@forward_messages" />
+      <Param Name="title" Template="@title" />
+      <Param Name="type" Template="@type" />
+      <Param Name="lat" Template="@lat" />
+      <Param Name="long" Template="@long" />
+      <Param Name="guid" Template="@guid" />
+      <Param Name="limit" Template="@limit" />
+      <Param Name="start_mid" Template="@start_mid" />
+      <Param Name="rev" Template="@rev" />
+      <Param Name="uids" Template="@uids" />
+    </Messages>
+    <Status>
+      <Param Name="uid" Template="@uid" />
+      <Param Name="text" Template="@text" />
+      <Param Name="audio" Template="@audio" />
+    </Status>
+    <Likes>
+      <Param Name="owner_id" Template="@owner_id" />
+      <Param Name="type" Template="@type" />
+      <Param Name="item_id" Template="@item_id" />
+      <Param Name="page_url" Template="@page_url" />
+      <Param Name="filter" Template="@filter" />
+      <Param Name="friends_only" Template="@friends_only" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="count" Template="@count" />
+      <Param Name="user_id" Template="@user_id" />
+    </Likes>
+    <Polls>
+      <Param Name="owner_id" Template="@owner_id" />
+      <Param Name="poll_id" Template="@poll_id" />
+      <Param Name="answer_id" Template="@answer_id" />
+    </Polls>
+    <Account>
+      <Param Name="contacts" Template="@contacts" />
+      <Param Name="token" Template="@token" />
+      <Param Name="device_model" Template="@device_model" />
+      <Param Name="system_version" Template="@system_version" />
+      <Param Name="no_text" Template="@no_text" />
+      <Param Name="time" Template="@time" />
+      <Param Name="uid" Template="@uid" />
+      <Param Name="chat_id" Template="@chat_id" />
+      <Param Name="sound" Template="@sound" />
+    </Account>
+    <Auth>
+      <Param Name="phone" Template="@phone" />
+      <Param Name="first_name" Template="@first_name" />
+      <Param Name="last_name" Template="@last_name" />
+      <Param Name="client_id" Template="@client_id" />
+      <Param Name="client_secret" Template="@client_secret" />
+      <Param Name="sex" Template="@sex" />
+      <Param Name="password" Template="@password" />
+      <Param Name="voice" Template="@voice" />
+      <Param Name="sid" Template="@sid" />
+      <Param Name="test_mode" Template="@test_mode" />
+      <Param Name="code" Template="@code" />
+    </Auth>
+    <Fave>
+      <Param Name="offset" Template="@offset" />
+      <Param Name="count" Template="@count" />
+      <Param Name="extended" Template="@extended" />
+      <Param Name="fields" Template="@fields" />
+    </Fave>
+    <Notifications>
+      <Param Name="filters" Template="@filters" />
+      <Param Name="start_time" Template="@start_time" />
+      <Param Name="end_time" Template="@end_time" />
+      <Param Name="offset" Template="@offset" />
+      <Param Name="count" Template="@count" />
+    </Notifications>
   </DependentParams>
   <GlobalParams>
     <Param Name="access_token" Template="@access_token" />

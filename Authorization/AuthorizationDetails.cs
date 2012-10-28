@@ -55,13 +55,25 @@ namespace VK.Authorization
 			issuedTime = DateTime.MinValue;
 		}
 
-		public bool Valid() {
+		public bool IsEmpty() {
+			return this.appId < 0 || this.rights == AccessRights.NO_RIGHTS;
+		}
+
+		public bool IsValid() {
 			return !String.IsNullOrEmpty(accessToken) && issuedTime != DateTime.Now && issuedTime.AddSeconds(expiresIn) > DateTime.Now;
 		}
 
 		public void SetAccessToken(string token) {
 			this.issuedTime = DateTime.Now;
 			this.accessToken = token;
+		}
+
+		public AuthorizationDetails GetCleared(bool keepUser = true) {
+			return new AuthorizationDetails() {
+				appId = this.appId,
+				rights = this.rights,
+				userId = keepUser ? this.userId : -1
+			};
 		}
 	}
 }

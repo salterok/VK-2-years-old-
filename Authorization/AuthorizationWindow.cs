@@ -15,7 +15,7 @@ namespace VK.Authorization
 
 		public AuthorizationWindow(ref AuthorizationDetails authorizationDetails)
 		{
-			authDetails = authorizationDetails;
+			authorizationDetails = authDetails = authorizationDetails.GetCleared();
 			browser = new WebBrowser();
 			this.Load += new EventHandler(this.AuthorizationWindow_Load);
 		}
